@@ -5,7 +5,7 @@ Estructura de carpetas para el contenido de operadores.
 ## Estructura
 
 ```
-/workspace/tuki-content/
+/workspace/content/tuki/
 ├── operadores/              # Contenido de operadores reales
 │   └── {operador_id}/
 │       └── {item_id}/

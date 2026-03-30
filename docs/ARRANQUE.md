@@ -71,7 +71,7 @@ docker compose up -d
 **Opción A — Raíz (como pide AGENTS.md hoy):** El agente lee `SOUL.md`, `USER.md`, etc. en la raíz del workspace.
 
 ```bash
-cp contexto-migrado/SOUL.md contexto-migrado/USER.md contexto-migrado/MEMORY.md contexto-migrado/HEARTBEAT.md contexto-migrado/AGENTS.md .
+cp archive/contexto-migrado/SOUL.md archive/contexto-migrado/USER.md archive/contexto-migrado/MEMORY.md archive/contexto-migrado/HEARTBEAT.md archive/contexto-migrado/AGENTS.md .
 mkdir -p memory
 ```
 
@@ -79,8 +79,8 @@ mkdir -p memory
 
 ```bash
 mkdir -p identity memory
-cp contexto-migrado/SOUL.md contexto-migrado/USER.md contexto-migrado/MEMORY.md contexto-migrado/HEARTBEAT.md identity/
-cp contexto-migrado/AGENTS.md .
+cp archive/contexto-migrado/SOUL.md archive/contexto-migrado/USER.md archive/contexto-migrado/MEMORY.md archive/contexto-migrado/HEARTBEAT.md identity/
+cp archive/contexto-migrado/AGENTS.md .
 # Luego editar AGENTS.md y cambiar rutas a identity/SOUL.md, identity/USER.md, identity/MEMORY.md, identity/HEARTBEAT.md
 ```
 

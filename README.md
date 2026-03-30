@@ -16,7 +16,9 @@ Entorno nuevo, limpio y paralelo para Clawdbot: asistente personal serio, seguro
 5. `docker compose up -d`
 6. Abrir `http://127.0.0.1:18789` → Settings para pegar token; luego `/chat?session=agent:main:main&token=TU_TOKEN`.
 
-Documentación del proyecto en **docs/**: `docs/ARRANQUE.md`, `docs/VALIDACION.md`, `docs/SECRETS.md`, `docs/SLACK.md` (conectar Clawdbot a Slack), `docs/FASE-2-CRECIMIENTO.md`, `docs/CREDITS-API.md`, `docs/FALLBACK-MODELO.md` (fallback hexagonal gateway), `docs/LOGS.md`, etc.
+Documentación del proyecto en **docs/**: `docs/ARRANQUE.md`, `docs/VALIDACION.md`, `docs/SECRETS.md`, `docs/SLACK.md` (conectar Clawdbot a Slack), `docs/FASE-2-CRECIMIENTO.md`, `docs/CREDITS-API.md`, `docs/FALLBACK-MODELO.md` (fallback hexagonal gateway), `docs/LOGS.md`, **`docs/STRUCTURE.md`** (árbol de carpetas: qué va en la raíz vs. `data/`, `archive/`, etc.).
+
+**Nota:** `SOUL.md`, `AGENTS.md`, `memory/`, `skills/` en la raíz **no** es desorden: es la convención del workspace Clawdbot. Lo que era “ruido” (leads, vendor, migración) quedó bajo `data/`, `vendor/`, `archive/`.
 
 ## Repositorio en GitHub
 
