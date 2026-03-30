@@ -16,7 +16,7 @@ Entorno nuevo, limpio y paralelo para Clawdbot: asistente personal serio, seguro
 5. `docker compose up -d`
 6. Abrir `http://127.0.0.1:18789` → Settings para pegar token; luego `/chat?session=agent:main:main&token=TU_TOKEN`.
 
-Documentación del proyecto en **docs/**: `docs/ARRANQUE.md`, `docs/VALIDACION.md`, `docs/SECRETS.md`, `docs/SLACK.md` (conectar Clawdbot a Slack), `docs/FASE-2-CRECIMIENTO.md`, `docs/CREDITS-API.md`, `docs/FALLBACK-MODELO.md` (fallback hexagonal gateway), `docs/LOGS.md`, **`docs/STRUCTURE.md`** (árbol de carpetas), **`docs/GROWTH-EVA.md`** (Eva + Tuki API + Notion para growth).
+Documentación del proyecto en **docs/**: `docs/ARRANQUE.md`, `docs/VALIDACION.md`, `docs/SECRETS.md`, `docs/SLACK.md` (conectar Clawdbot a Slack), `docs/FASE-2-CRECIMIENTO.md`, `docs/CREDITS-API.md`, `docs/FALLBACK-MODELO.md` (fallback hexagonal gateway), `docs/LOGS.md`, **`docs/STRUCTURE.md`** (árbol de carpetas), **`docs/GROWTH-EVA.md`** (Eva + Tuki API + Notion para growth), **`docs/RED-AGENTES-TUKI-NOTION.md`** (red de agentes, sync Notion ↔ plataforma, fases), **`docs/CURSOR-PROMPT-EVA-SYNC-CARGA.md`** (prompt para Cursor), **`docs/CHECKLIST-CARGA-TUKI.md`** (plantilla checklist de carga).
 
 **Nota:** `SOUL.md`, `AGENTS.md`, `memory/`, `skills/` en la raíz **no** es desorden: es la convención del workspace Clawdbot. Lo que era “ruido” (leads, vendor, migración) quedó bajo `data/`, `vendor/`, `archive/`.
 
