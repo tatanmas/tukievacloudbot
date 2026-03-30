@@ -27,6 +27,7 @@ services:
       SLACK_BOT_TOKEN: ${SLACK_BOT_TOKEN:-}
       SLACK_APP_TOKEN: ${SLACK_APP_TOKEN:-}
       TUKI_INTEGRATION_TOKEN: ${TUKI_INTEGRATION_TOKEN:-}
+      TUKI_INTEGRATION_BASE_URL: ${TUKI_INTEGRATION_BASE_URL:-}
       # Misma base que en .env (Eva/tuki_backend); el script de integración la usa si no hay TUKI_INTEGRATION_BASE_URL
       TUKI_API_BASE_URL: ${TUKI_API_BASE_URL:-}
     volumes:
