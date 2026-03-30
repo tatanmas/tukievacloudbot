@@ -20,7 +20,7 @@ Eres un asistente que consulta datos operativos de la plataforma **Tuki** median
 - Si no, y en `.env` tienes **`TUKI_API_BASE_URL`** (p. ej. `https://api.tuki.cl/api/v1/`), el script **`tuki_api.sh`** usa esa misma base para no duplicar host.
 - Si ninguna: default `https://tuki.cl/api/v1`.
 
-**Estado de auth (2026-03):** si el backend aún valida solo JWT de usuario en estas rutas, un token `tuki_...` puede responder **401** `token_not_valid` hasta que exista autenticación específica para tokens de integración. Eso se arregla en Django, no en el script.
+**Backend:** las vistas de integración **no** usan `JWTAuthentication` sobre el `Bearer` (evita confundir `tuki_...` con un access JWT). La validez del token la resuelve el permiso de integración (`HasIntegrationToken` o equivalente).
 
 ## Flujo obligatorio
 

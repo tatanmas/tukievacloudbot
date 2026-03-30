@@ -57,7 +57,7 @@
 
 ## API Tuki (integración operativa)
 
-- Skill **`tuki-integration-api`**: solo GET; token **`TUKI_INTEGRATION_TOKEN`** en `.env`; script `skills/tuki-integration-api/scripts/tuki_api.sh`; flujo **capabilities → snapshot / orders-summary** según scopes del token.
+- Skill **`tuki-integration-api`**: solo GET; token **`TUKI_INTEGRATION_TOKEN`** en `.env`; script `skills/tuki-integration-api/scripts/tuki_api.sh`; flujo **capabilities → snapshot / orders-summary** según scopes del token. En prod el Bearer `tuki_...` ya no pasa por SimpleJWT en esas rutas (fix backend).
 
 ## Notas
 *(Espacio para lo que vayas aprendiendo: qué le molesta, qué le motiva, preferencias de comunicación, etc.)*
