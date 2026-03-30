@@ -31,6 +31,7 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
   - `bash /workspace/skills/tuki-integration-api/scripts/tuki_api.sh capabilities`
   - luego `snapshot` u `orders-summary` según `skills/tuki-integration-api/SKILL.md`.
 - Flujo: **siempre** `capabilities` primero; scopes `snapshot` y `orders` según el token. **403** en `orders-summary` → falta scope `orders` (SuperAdmin → API integración LLM).
+- **Growth:** ritmo y reglas en **`docs/GROWTH-EVA.md`** (pulso Tuki + Notion + preguntar a Tatan lo que la API no cubre).
 
 ## Notion (no olvidar)
 
