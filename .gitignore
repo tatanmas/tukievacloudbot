@@ -17,6 +17,10 @@ node_modules/
 *.log
 *.tmp
 
+# Pulses Tuki (generados por growth_pulse.sh; mantener solo README en git)
+data/pulses/*
+!data/pulses/README.md
+
 # Python
 __pycache__/
 *.py[cod]

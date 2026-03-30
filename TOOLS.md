@@ -33,6 +33,8 @@ Skills define *how* tools work. This file is for *your* specifics — the stuff 
 - Flujo: **siempre** `capabilities` primero; scopes `snapshot` y `orders` según el token. **403** en `orders-summary` → falta scope `orders` (SuperAdmin → API integración LLM).
 - **Growth:** ritmo y reglas en **`docs/GROWTH-EVA.md`** (pulso Tuki + Notion + preguntar a Tatan lo que la API no cubre).
 - **Red agentes / sync / carga:** arquitectura por fases en **`docs/RED-AGENTES-TUKI-NOTION.md`**; prompt listo para Cursor en **`docs/CURSOR-PROMPT-EVA-SYNC-CARGA.md`**; checklist de campos (completar desde backend) en **`docs/CHECKLIST-CARGA-TUKI.md`**.
+- **Pulso growth automático:** `skills/tuki-integration-api/scripts/growth_pulse.sh` escribe `data/pulses/latest-growth-pulse.md` (cron vía `docker exec`, ver **`docs/PULSO-GROWTH-CRON.md`** y `crontab.mac.example`).
+- **Pulso secuencial:** `bash /workspace/skills/tuki-integration-api/scripts/tuki_pulse.sh` (opcional `--json-out DIR`). Sync Notion ↔ IDs Tuki: skill **`skills/tuki-notion-sync/`**, exports en **`data/sync/`**, script `sync_leads_from_export.py`.
 
 ## Notion (no olvidar)
 

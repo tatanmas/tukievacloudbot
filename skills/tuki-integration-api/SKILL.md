@@ -44,6 +44,36 @@ bash /workspace/skills/tuki-integration-api/scripts/tuki_api.sh snapshot
 bash /workspace/skills/tuki-integration-api/scripts/tuki_api.sh orders-summary
 ```
 
+### Pulso en secuencia (chat / una sola corrida)
+
+```bash
+bash /workspace/skills/tuki-integration-api/scripts/tuki_pulse.sh
+# Opcional: guardar JSON en disco
+bash /workspace/skills/tuki-integration-api/scripts/tuki_pulse.sh --json-out /workspace/data/pulse/$(date +%Y-%m-%d)
+```
+
+### Pulso programado (cron, “equipo growth” sin LLM)
+
+Solo **snapshot + orders** → Markdown + JSON en `data/pulses/` (ver **`docs/PULSO-GROWTH-CRON.md`**):
+
+```bash
+bash /workspace/skills/tuki-integration-api/scripts/growth_pulse.sh
+```
+
+Genera `latest-growth-pulse.md` y `snapshot-latest.json` / `orders-latest.json`. Eva puede **leer ese Markdown** cuando pidas resumen sin repetir llamadas a la API.
+
+Si `orders-summary` falla (**403**), revisar scope `orders` en el token. `tuki_pulse` sigue aunque falle orders si está diseñado así.
+
+### Listados por tipo (alojamiento, experiencia, …)
+
+**No implementado** en la API de integración actual. Stub informativo:
+
+```bash
+bash /workspace/skills/tuki-integration-api/scripts/tuki_resource_lists_stub.sh accommodations
+```
+
+Sale con código **5** hasta que existan GET documentados en el backend. No inventar URLs.
+
 El script escribe el código HTTP en stderr. Si `orders-summary` devuelve **403**, el token no incluye scope `orders`: dilo claro y sugiere crear otro token con ese scope en **SuperAdmin → API integración LLM**.
 
 ## Interpretación (no inventar)

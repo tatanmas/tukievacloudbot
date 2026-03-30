@@ -14,6 +14,9 @@ PATH=/usr/local/bin:/usr/bin:/bin
 # 9:00 — Morning report
 0 9 * * * /usr/local/bin/docker exec clawd-clean-gateway bash -lc 'cd /workspace/skills/pipeline-monitor && ./morning_report.sh' >> /tmp/tuki-morning.log 2>&1
 
+# 9:05 — Pulso growth Tuki (snapshot + orders → data/pulses/latest-growth-pulse.md)
+# 5 9 * * 1-5 /usr/local/bin/docker exec clawd-clean-gateway bash -lc 'cd /workspace/skills/tuki-integration-api/scripts && ./growth_pulse.sh' >> /tmp/tuki-growth-pulse.log 2>&1
+
 # 9:30 — Urgentes
 30 9 * * * /usr/local/bin/docker exec clawd-clean-gateway bash -lc 'cd /workspace/skills/pipeline-monitor && ./check_stalled.sh --urgent-only' >> /tmp/tuki-stalled.log 2>&1
 

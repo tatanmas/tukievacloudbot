@@ -12,7 +12,8 @@ Guía operativa: **datos de la plataforma + preguntas a Tatan** cuando falte con
 
 | Cuándo | Qué hacer |
 |--------|-----------|
-| Pulso o review | `capabilities` → `snapshot` (inventario, actividad aproximada) y, si el token tiene scope `orders`, `orders-summary` (órdenes y `revenue_eligible`). |
+| Pulso o review (chat) | `capabilities` → `snapshot` y `orders-summary` (o `tuki_pulse.sh`). |
+| Pulso automático (sin gastar chat) | `growth_pulse.sh` por **cron** → `data/pulses/latest-growth-pulse.md`. Detalle: **`docs/PULSO-GROWTH-CRON.md`**. |
 | Si falta meta | Preguntar objetivo concreto (ingresos, reservas, destino a empujar) y crear tarea o nota en Notion. |
 | Heartbeat | Rotar ítems en `HEARTBEAT.md` (Tuki + brecha de growth). |
 
