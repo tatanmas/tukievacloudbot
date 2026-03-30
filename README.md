@@ -20,23 +20,26 @@ Documentación del proyecto en **docs/**: `docs/ARRANQUE.md`, `docs/VALIDACION.m
 
 ## Repositorio en GitHub
 
-Este workspace está pensado para versionar **skills**, `AGENTS.md`, `docker-compose`, parches y documentación, sin secretos (`.env` va en `.gitignore`; solo se commitea `.env.example`).
+- **Remoto:** `git@github.com:tatanmas/tukievacloudbot.git`
+- **Web:** https://github.com/tatanmas/tukievacloudbot
 
-### Crear el repo remoto y subir
+Este workspace versiona **skills**, `AGENTS.md`, `docker-compose`, parches y documentación, sin secretos (`.env` en `.gitignore`; solo `.env.example`).
 
-1. En GitHub: **New repository** → nombre (p. ej. `clawd-clean`) → **sin** README/license si ya tienes historial local (evita conflictos).
-2. En la carpeta del proyecto:
+### Clonar en otra máquina
 
 ```bash
-git status   # revisar que .env no aparezca como archivo nuevo
-git remote add origin https://github.com/TU_USUARIO/clawd-clean.git
+git clone git@github.com:tatanmas/tukievacloudbot.git
+cd tukievacloudbot
+cp .env.example .env   # y completar valores locales
+```
+
+### Primer push en un clon nuevo (si aplica)
+
+```bash
+git remote add origin git@github.com:tatanmas/tukievacloudbot.git
 git branch -M main
 git push -u origin main
 ```
-
-Si aún no tienes commit local: `git add -A && git commit -m "Initial commit: clawd-clean workspace"`, luego el `push`.
-
-**CLI `gh` (opcional):** desde la raíz del repo, `gh repo create clawd-clean --private --source=. --remote=origin --push` crea el repo privado y hace el primer push (requiere `gh auth login`).
 
 ### Qué no subir nunca
 
