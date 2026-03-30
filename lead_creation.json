@@ -1,0 +1,54 @@
+{
+  "leads": [
+    {
+      "name": "Pousada Naturalia",
+      "country": "Brasil",
+      "city": "Angra dos Reis",
+      "type": "Pousada",
+      "phone": "+55 24 3361-9583",
+      "web": "https://www.facebook.com/NaturaliaPousada/"
+    },
+    {
+      "name": "365 Hostel Angra dos Reis",
+      "country": "Brasil", 
+      "city": "Angra dos Reis",
+      "type": "Hostal",
+      "phone": "+55 24 3365-6312",
+      "web": "http://hostel365.com.br/"
+    },
+    {
+      "name": "Pousada AngraBella",
+      "country": "Brasil",
+      "city": "Angra dos Reis",
+      "type": "Pousada",
+      "phone": "+55 24 3365-4247",
+      "email": "reserva@angrabella.com.br",
+      "web": "http://angrabella.com.br/"
+    },
+    {
+      "name": "Hotelera San Rafael Coyhaique",
+      "country": "Chile",
+      "city": "Coyhaique",
+      "type": "Hotel",
+      "phone": "+56 67 233733",
+      "web": "http://www.hotelerasanrafael.cl"
+    },
+    {
+      "name": "Patagonia House Bed and Breakfast",
+      "country": "Chile",
+      "city": "Coyhaique",
+      "type": "Hotel",
+      "phone": "+56 67 52 89 15",
+      "email": "info@patagonia-house.com",
+      "web": "http://www.patagonia-house.com"
+    },
+    {
+      "name": "Hostal Español Coyhaique",
+      "country": "Chile",
+      "city": "Coyhaique",
+      "type": "Hostal",
+      "phone": "+56 67 242 580",
+      "web": "http://www.hostalcoyhaique.cl"
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+  "leads": [
+    {
+      "nombre": "Hotel Cumbres Lastarria",
+      "zona": "Lastarria",
+      "comuna": "Santiago Centro",
+      "tipo": "Hotel Boutique",
+      "email": ["info@hotelescumbres.cl", "reservas@hotelescumbres.cl"],
+      "telefono": null,
+      "web": "https://www.cumbreslastarria.com",
+      "whatsapp": null,
+      "instagram": null,
+      "estado": "pendiente_contacto"
+    },
+    {
+      "nombre": "The Singular Santiago",
+      "zona": "Lastarria",
+      "comuna": "Santiago Centro",
+      "tipo": "Hotel Boutique",
+      "email": ["santiagoreservas@thesingular.com"],
+      "telefono": null,
+      "web": "https://www.thesingular.com",
+      "whatsapp": null,
+      "instagram": null,
+      "estado": "pendiente_contacto"
+    },
+    {
+      "nombre": "Hotel Bidasoa",
+      "zona": "Vitacura",
+      "comuna": "Las Condes",
+      "tipo": "Hotel Boutique",
+      "email": ["reservas@hotelbidasoa.cl"],
+      "telefono": ["+56 2 2602 3900", "+56 9 3488 2789"],
+      "web": "https://hotelbidasoa.cl",
+      "whatsapp": "https://go.wa.link/bidasoa",
+      "instagram": "@hotelbidasoa",
+      "direccion": "Av. Vitacura, 4873, Santiago",
+      "estado": "pendiente_contacto"
+    },
+    {
+      "nombre": "Lastarria 43 y 61 Apart Hotel",
+      "zona": "Lastarria",
+      "comuna": "Santiago Centro",
+      "tipo": "Apart Hotel",
+      "email": ["contacto@lastarria.cl"],
+      "telefono": ["+56226383230"],
+      "celular": "+56 9 9496 1793",
+      "web": "https://lastarria.cl",
+      "whatsapp": "https://wa.me/56994961793",
+      "instagram": null,
+      "direccion": "Jose Victorino Lastarria 43, Santiago Centro",
+      "estado": "pendiente_contacto"
+    },
+    {
+      "nombre": "MR. Hotel (Ex Hotel Neruda)",
+      "zona": "Providencia",
+      "comuna": "Providencia",
+      "tipo": "Hotel 4 Estrellas",
+      "email": ["reservas@mrhotel.cl"],
+      "telefono": ["+56 2 2663 3153", "+56 2 2679 0700"],
+      "web": "https://www.mrhoteles.cl/hoteles/mrhotel",
+      "whatsapp": null,
+      "instagram": null,
+      "direccion": "Av. Pedro de Valdivia 164, Providencia",
+      "estado": "pendiente_contacto"
+    },
+    {
+      "nombre": "MR. Express (Ex Hotel Neruda Express)",
+      "zona": "El Golf",
+      "comuna": "Las Condes",
+      "tipo": "Hotel",
+      "email": ["reservas@mrexpress.cl"],
+      "telefono": ["+56 2 2663 3152", "+56 2 2327 1200"],
+      "web": "https://www.mrhoteles.cl/hoteles/mrexpress",
+      "whatsapp": null,
+      "instagram": null,
+      "direccion": "Vecinal 40, Las Condes",
+      "estado": "pendiente_contacto"
+    },
+    {
+      "nombre": "MR. Apart (Ex Apart Neruda)",
+      "zona": "Providencia",
+      "comuna": "Providencia",
+      "tipo": "Apart Hotel",
+      "email": ["reservas@mrapart.cl"],
+      "telefono": ["+56 2 2663 3151", "+56 2 2679 0700"],
+      "web": "https://www.mrhoteles.cl/hoteles/mrapart",
+      "whatsapp": null,
+      "instagram": null,
+      "direccion": "Av. Pedro de Valdivia 164, Providencia",
+      "estado": "pendiente_contacto"
+    },
+    {
+      "nombre": "Hotel Montecarlo",
+      "zona": "Reñaca",
+      "comuna": "Viña del Mar",
+      "tipo": "Hotel",
+      "email": ["info@hotelmontecarlo.cl"],
+      "telefono": ["+56 32 2830397", "+56 32 2835727"],
+      "web": "https://www.hotelmontecarlo.cl",
+      "whatsapp": "+56 9 2226 2158",
+      "instagram": null,
+      "direccion": "Av. Vicuña Mackenna 136, Reñaca",
+      "estado": "pendiente_contacto"
+    }
+  ],
+  "total": 8,
+  "fecha": "2026-03-28",
+  "progreso": "16%"
+}

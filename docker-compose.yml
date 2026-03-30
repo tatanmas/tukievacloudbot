@@ -1,0 +1,40 @@
+# clawd-clean — gateway Clawdbot stock, mínimo
+# Sin cron, WhatsApp, canvas, patch ni volumen de sesiones custom.
+# Antes del primer run: copiar .env.example a .env y configurar CLAWDBOT_GATEWAY_TOKEN y API keys.
+# Si usas Notion: NOTION_TOKEN (y opcionalmente NOTION_*_DB_ID) en .env; tras cambiar .env → docker compose up -d --force-recreate.
+# Slack: SLACK_BOT_TOKEN + SLACK_APP_TOKEN en .env; registrar canal con clawdbot channels add (ver docs/SLACK.md).
+# Tuki integration API: TUKI_INTEGRATION_TOKEN en .env (skill tuki-integration-api).
+
+services:
+  clawdbot-gateway:
+    build: .
+    container_name: clawd-clean-gateway
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      CLAWDBOT_STATE_DIR: /workspace/.clawdbot
+      HOME: /workspace
+      # OpenClaw/Chrome extension docs mencionan OPENCLAW_GATEWAY_TOKEN; mismo valor que CLAWDBOT (lee .env al hacer compose up).
+      OPENCLAW_GATEWAY_TOKEN: ${CLAWDBOT_GATEWAY_TOKEN}
+      # Notion: pasar explícitamente para que exec/sandbox los reciba (evitar "No hay API key de Notion")
+      NOTION_TOKEN: ${NOTION_TOKEN}
+      NOTION_API_KEY: ${NOTION_API_KEY:-${NOTION_TOKEN}}
+      NOTION_NOTES_DB_ID: ${NOTION_NOTES_DB_ID}
+      NOTION_ACTIONABLES_DB_ID: ${NOTION_ACTIONABLES_DB_ID}
+      # Google Places (skill goplaces / local-places); crear clave en Google Cloud Console (Places API New)
+      GOOGLE_PLACES_API_KEY: ${GOOGLE_PLACES_API_KEY:-}
+      # Slack (Socket Mode); luego: clawdbot channels add --channel slack --use-env
+      SLACK_BOT_TOKEN: ${SLACK_BOT_TOKEN:-}
+      SLACK_APP_TOKEN: ${SLACK_APP_TOKEN:-}
+      TUKI_INTEGRATION_TOKEN: ${TUKI_INTEGRATION_TOKEN:-}
+      # Misma base que en .env (Eva/tuki_backend); el script de integración la usa si no hay TUKI_INTEGRATION_BASE_URL
+      TUKI_API_BASE_URL: ${TUKI_API_BASE_URL:-}
+    volumes:
+      - .:/workspace
+    ports:
+      - "127.0.0.1:18789:18789"
+      # 18791 = browser control (Express, JSON de estado). NO es el relay de la extensión.
+      - "127.0.0.1:18791:18791"
+      # 18792 = relay Chrome/OpenClaw (extension-relay.js, GET / → "OK"). La extensión debe usar este puerto.
+      - "127.0.0.1:18792:18792"
+    working_dir: /workspace

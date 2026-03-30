@@ -1,0 +1,46 @@
+# Cron Tuki - Automatización 24/7
+#
+# IMPORTANTE — Rutas /workspace = SOLO dentro del contenedor Docker del gateway.
+# En tu Mac NO existe /workspace. No uses `crontab crontab.tuki` en macOS tal cual:
+# fallará o no hará nada útil.
+#
+# Para disparar estos jobs desde el Mac, usá `docker exec` (ver crontab.mac.example
+# o docs/CRON-TUKI.md).
+#
+# Dentro del contenedor (poco habitual): crontab -e y pegar líneas con /workspace/...
+
+# Variables
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin:
+
+# === LEADSCOUT BROWSER ===
+# Captura cada 2 segundos (ejecutar script que corre en loop)
+0 * * * * /workspace/skills/leadscout-browser/orquestador.sh status >> /tmp/cron.log 2>&1
+
+# === CRON JOBS DIARIOS ===
+
+# 9:00 AM - Morning Report (estancados + acciones)
+0 9 * * * /workspace/skills/pipeline-monitor/morning_report.sh
+
+# 9:30 AM - Alertas urgentes (contactar hace >5 días)
+30 9 * * * /workspace/skills/pipeline-monitor/check_stalled.sh --urgent-only
+
+# 2:00 PM - Revisión de tarde
+0 14 * * * /workspace/skills/pipeline-monitor/check_stalled.sh --medium
+
+# 6:00 PM - Reporte de cierre
+0 18 * * * /workspace/skills/pipeline-monitor/check_stalled.sh
+
+# === SEMANALES ===
+
+# Domingo 10:00 AM - Estadísticas semanales
+0 10 * * 0 /workspace/skills/pipeline-monitor/metrics_dashboard.py --weekly
+
+# === CONTÍNUO ===
+
+# Cada hora - Health check del sistema
+0 * * * * /workspace/skills/tuki-orch/scripts/check_health.sh
+
+# Nota: Para activar:
+# $ crontab crontab.tuki
+# $ crontab -l (verificar)

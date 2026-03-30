@@ -1,0 +1,27 @@
+# Ejemplo de crontab para macOS — ejecuta scripts dentro del gateway Docker
+#
+# 1. Ajustá la ruta a `docker` si hace falta: `which docker`
+# 2. El nombre del contenedor debe coincidir con docker-compose (por defecto: clawd-clean-gateway)
+# 3. Probar a mano antes:
+#    docker exec clawd-clean-gateway bash -lc 'cd /workspace/skills/pipeline-monitor && ./morning_report.sh'
+# 4. Instalar: crontab -e  y pegar las líneas que quieras (sin los # de comentario de sección)
+#
+SHELL=/bin/bash
+PATH=/usr/local/bin:/usr/bin:/bin
+
+# Zona horaria: cron del Mac usa la hora local del sistema. Ajustá los minutos/horas si querés otra TZ.
+
+# 9:00 — Morning report
+0 9 * * * /usr/local/bin/docker exec clawd-clean-gateway bash -lc 'cd /workspace/skills/pipeline-monitor && ./morning_report.sh' >> /tmp/tuki-morning.log 2>&1
+
+# 9:30 — Urgentes
+30 9 * * * /usr/local/bin/docker exec clawd-clean-gateway bash -lc 'cd /workspace/skills/pipeline-monitor && ./check_stalled.sh --urgent-only' >> /tmp/tuki-stalled.log 2>&1
+
+# 14:00 — Revisión tarde
+0 14 * * * /usr/local/bin/docker exec clawd-clean-gateway bash -lc 'cd /workspace/skills/pipeline-monitor && ./check_stalled.sh --medium' >> /tmp/tuki-stalled.log 2>&1
+
+# 18:00 — Cierre
+0 18 * * * /usr/local/bin/docker exec clawd-clean-gateway bash -lc 'cd /workspace/skills/pipeline-monitor && ./check_stalled.sh' >> /tmp/tuki-stalled.log 2>&1
+
+# Cada hora (ejemplo leadscout status — descomentá si querés)
+# 0 * * * * /usr/local/bin/docker exec clawd-clean-gateway bash -lc 'cd /workspace/skills/leadscout-browser && ./orquestador.sh status' >> /tmp/tuki-leadscout.log 2>&1
